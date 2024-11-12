@@ -37,3 +37,33 @@ function longestSubstring(str) {
 
 longestSubstring('bbbb');
 longestSubstring('pwwkew');
+
+/**
+ * Reverse Integer
+ */
+
+function reverseInt(num) {
+  let tempNum = 0;
+  let reverseNum = 0;
+  let tempNumPositive = 0;
+
+  if (num < 0) {
+    tempNumPositive = num * -1;
+  } else {
+    tempNumPositive = num;
+  }
+
+  while (tempNumPositive > 0) {
+    tempNum = tempNumPositive % 10;
+    reverseNum = reverseNum * 10 + tempNum;
+    tempNumPositive = Math.floor(tempNumPositive / 10);
+  }
+
+  if (num < 0) {
+    reverseNum = reverseNum * -1;
+  }
+
+  console.log(reverseNum);
+}
+
+reverseInt(1534236469);
