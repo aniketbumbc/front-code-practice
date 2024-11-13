@@ -59,5 +59,47 @@ function longPalindromStr(str) {
   console.log(longestLengthEle);
 }
 
-longPalindromStr('babad');
-longPalindromStr('cbbd');
+// longPalindromStr('babad');
+// longPalindromStr('cbbd');
+
+function longPalindrome(str) {
+  let currentStr = '';
+
+  if (getReverseStr(str)) {
+    return str;
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j <= str.length; j++) {
+      const subStr = str.substring(i, j);
+
+      if (getReverseStr(subStr)) {
+        if (subStr.length > currentStr.length) {
+          currentStr = subStr;
+        }
+      }
+    }
+  }
+
+  console.log(currentStr);
+}
+
+function getReverseStr(str) {
+  let tempStr = '';
+
+  for (let ele of str) {
+    tempStr = ele + tempStr;
+  }
+
+  if (str === tempStr) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+longPalindrome('babad');
+longPalindrome('cbbd');
+longPalindrome(
+  'jrjnbctoqgzimtoklkxcknwmhiztomaofwwzjnhrijwkgmwwuazcowskjhitejnvtblqyepxispasrgvgzqlvrmvhxusiqqzzibcyhpnruhrgbzsmlsuacwptmzxuewnjzmwxbdzqyvsjzxiecsnkdibudtvthzlizralpaowsbakzconeuwwpsqynaxqmgngzpovauxsqgypinywwtmekzhhlzaeatbzryreuttgwfqmmpeywtvpssznkwhzuqewuqtfuflttjcxrhwexvtxjihunpywerkktbvlsyomkxuwrqqmbmzjbfytdddnkasmdyukawrzrnhdmaefzltddipcrhuchvdcoegamlfifzistnplqabtazunlelslicrkuuhosoyduhootlwsbtxautewkvnvlbtixkmxhngidxecehslqjpcdrtlqswmyghmwlttjecvbueswsixoxmymcepbmuwtzanmvujmalyghzkvtoxynyusbpzpolaplsgrunpfgdbbtvtkahqmmlbxzcfznvhxsiytlsxmmtqiudyjlnbkzvtbqdsknsrknsykqzucevgmmcoanilsyyklpbxqosoquolvytefhvozwtwcrmbnyijbammlzrgalrymyfpysbqpjwzirsfknnyseiujadovngogvptphuyzkrwgjqwdhtvgxnmxuheofplizpxijfytfabx'
+);
