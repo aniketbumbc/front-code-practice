@@ -3,5 +3,5 @@
 //import './Basic code/Nov-11-24';
 //import './Basic code/Nov-12-24';
 //import './Basic code/Nove-13-24';
-
-import './Basic code/Nov-14-24';
+//import './Basic code/Nov-14-24';
+import './Basic code/Nove-15-24';
