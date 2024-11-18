@@ -17,6 +17,12 @@ input.addEventListener('input', (e) => {
   updateThrottleText(e.target.value);
 });
 
+/**
+ * debounce
+ * @param {*} cb
+ * @param {*} delay
+ */
+
 function debounce(cb, delay = 2000) {
   let timeout;
 
@@ -28,6 +34,11 @@ function debounce(cb, delay = 2000) {
   };
 }
 
+/**
+ * throttle
+ * @param {*} cd
+ * @param {*} delay
+ */
 function throttle(cd, delay = 2000) {
   let showText = false;
   let waitingArgs;
