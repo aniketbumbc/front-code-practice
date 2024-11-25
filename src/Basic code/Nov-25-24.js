@@ -26,6 +26,28 @@ function binarySearch(arr, ele) {
   return left;
 }
 
-console.log(binarySearch([1, 3, 5, 6], 5));
-console.log(binarySearch([1, 3, 5, 6], 7));
-//
+// console.log(binarySearch([1, 3, 5, 6], 5));
+// console.log(binarySearch([1, 3, 5, 6], 7));
+// //
+
+/**
+ *  Another method
+ */
+
+function searchInsert(nums, target) {
+  let indexEle = -1;
+
+  if (nums.includes(target)) {
+    console.log(nums.indexOf(target));
+  } else {
+    console.log([...nums, target].sort((a, b) => a - b));
+
+    indexEle = [...nums, target].sort((a, b) => a - b).indexOf(target);
+  }
+
+  return indexEle;
+}
+
+console.log(searchInsert([1, 3, 5, 6], 7));
+
+console.log(searchInsert([1, 3, 5, 6], 4));
