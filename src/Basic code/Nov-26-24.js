@@ -2,8 +2,6 @@
  *  Length of Last Word
  */
 
-console.log('Testing ');
-
 function findLastWordLength(str) {
   const strArray = str.trim().split(' ');
 
