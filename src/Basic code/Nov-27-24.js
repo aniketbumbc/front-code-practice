@@ -5,11 +5,8 @@
 function findIndexFirst(str1, str2) {
   if (str1.includes(str2)) {
     const arraySplit = str1.split(str2);
-
-    console.log(arraySplit);
-    console.log(arraySplit[0].length);
-
-    return arraySplit[0];
+    return str1.indexOf(str2);
+    //return arraySplit[0];
   }
 }
 
