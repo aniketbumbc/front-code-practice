@@ -56,11 +56,6 @@ console.log(stringMatch(['mass', 'as', 'hero', 'superhero']));
 const subStringInAnother = (str1, str2) => {
   let j = 0;
   let startIndex = -1;
-  if (str2.length >= str1.length) {
-    let temp = str1;
-    str1 = str2;
-    str2 = temp;
-  }
 
   for (let i = 0; i < str1.length; i++) {
     if (str1[i] === str2[j]) {
