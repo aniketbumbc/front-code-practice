@@ -119,4 +119,4 @@ var finalPrimeCount = function (n) {
   return onesArry.filter((n) => n).length;
 };
 
-console.log(countPrimes(10));
+console.log(finalPrimeCount(10));
