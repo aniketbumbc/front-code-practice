@@ -45,8 +45,8 @@ var reverseVowelsNew = function (s) {
     }
   });
 
-  console.log(arr);
+  console.log(arr.join(''));
   return arr.join('');
 };
 
-reverseVowelsNew('hello');
+reverseVowelsNew('programming');
