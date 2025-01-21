@@ -473,3 +473,55 @@ function removeStr(str) {
 
 console.log(backSpaceChar('a#c', 'b'));
 console.log(backSpaceChar('ab##', 'c#d#'));
+
+/**
+ *   Maximum sum of subarray with number K
+ */
+
+function maxSubArraySum(array, num) {
+  let tempSum = 0;
+  let maxSum = 0;
+
+  if (num > array.length) {
+    return 0;
+  }
+
+  for (let i = 0; i < num; i++) {
+    maxSum += array[i];
+  }
+
+  tempSum = maxSum;
+
+  for (let i = num; i < array.length; i++) {
+    tempSum = tempSum - array[i - num] + array[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
+}
+
+const arr = [100, 200, 300, 400];
+const num = 2;
+const maxSum = maxSubArraySum(arr, num);
+console.log(maxSum);
+
+/**
+ *  sum of subarray
+ */
+
+const maxSubArraySumNoK = (arry) => {
+  let currentSum = 0;
+  let maxSum = -Infinity;
+
+  for (let i = 0; i < arry.length; i++) {
+    currentSum += arry[i];
+    maxSum = Math.max(currentSum, maxSum);
+
+    if (currentSum < 0) {
+      currentSum = 0;
+    }
+  }
+  console.log(maxSum);
+};
+
+maxSubArraySumNoK([3, -4, 5, 4, -1, 7, -8]);
+maxSubArraySumNoK([-1]);
