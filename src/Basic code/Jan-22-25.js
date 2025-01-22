@@ -93,3 +93,40 @@ let result = numbers.myReduce((acc, current) => {
 }, 0);
 
 console.log('add', result);
+
+/**
+ *  Deep Copy of array and object polyfill
+ */
+
+const testArray = [1, 2, [34, 23, [100]]];
+const newCopyArray = deepCopy(testArray);
+newCopyArray[2][2] = 500;
+
+const testObj = {
+  name: 'aniket',
+  city: {
+    area: {
+      pin: 56736,
+    },
+  },
+};
+
+const newCopyObj = deepCopy(testObj);
+
+newCopyObj.city.area.pin = 9999;
+
+console.log(testObj);
+console.log(newCopyObj);
+
+function deepCopy(value) {
+  if (['string', 'number', 'boolean'].includes(typeof value)) {
+    return value;
+  } else if (Array.isArray(value)) {
+    return value.map((ele) => deepCopy(ele));
+  } else {
+    return Object.keys(value).reduce((acc, key) => {
+      acc[key] = deepCopy(value[key]);
+      return acc;
+    }, {});
+  }
+}
