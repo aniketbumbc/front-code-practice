@@ -7,7 +7,7 @@
  *
  */
 
-const obj = { one: 1, two: 2 };
+const obj = { one: 1, two: 2, city: ['a', 'b', 'c'] };
 
 const obj2 = obj;
 
@@ -48,6 +48,7 @@ const deepCloneObj = {
     pincode: {
       area: 21227,
     },
+    grade: ['a', 'b', 'c'],
   },
 };
 
@@ -55,11 +56,13 @@ const normalClone = deepCloneObj;
 const testDeepClone = deepClone(deepCloneObj);
 
 normalClone.city.pincode.area = '89898';
+normalClone.city.grade.push('z');
 
 console.log('new', normalClone);
 console.log('og', deepCloneObj);
 console.log(normalClone === deepCloneObj);
 
+testDeepClone.city.grade.push('YY');
 testDeepClone.city.pincode.area = '111111';
 console.log('og', deepCloneObj);
 console.log('tet func', testDeepClone);
