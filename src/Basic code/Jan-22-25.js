@@ -73,7 +73,7 @@ const reduceNormal = numbers.reduce((acc, curr) => {
   return addition;
 }, 0);
 
-console.log(reduceNormal);
+// console.log(reduceNormal);
 
 /**
  *  Polyfill callback
@@ -92,7 +92,7 @@ let result = numbers.myReduce((acc, current) => {
   return acc + current;
 }, 0);
 
-console.log('add', result);
+// console.log('add', result);
 
 /**
  *  Deep Copy of array and object polyfill
@@ -115,8 +115,8 @@ const newCopyObj = deepCopy(testObj);
 
 newCopyObj.city.area.pin = 9999;
 
-console.log(testObj);
-console.log(newCopyObj);
+// console.log(testObj);
+// console.log(newCopyObj);
 
 function deepCopy(value) {
   if (['string', 'number', 'boolean'].includes(typeof value)) {
@@ -130,3 +130,59 @@ function deepCopy(value) {
     }, {});
   }
 }
+
+/**
+ *  Polyfill bind , call and apply
+ */
+
+const physics = {
+  marks: 200,
+  section: 'Morning',
+};
+
+const maths = {
+  marks: 100,
+};
+
+function getMarks(level) {
+  console.log(`marks ${this.marks} and Level is ${level} `);
+}
+
+//getMarks.call(physics, 'hard');
+
+Function.prototype.myCall = function (obj = {}, ...args) {
+  if (typeof this !== 'function') {
+    throw new Error();
+  }
+
+  obj.fn = this;
+  obj.fn(...args);
+};
+
+// getMarks.myCall(physics, 'Easy');
+
+function scores(...levels) {
+  console.log(`Marks in the ${this.section} section and Levels are ${levels} `);
+}
+
+scores.apply(physics, ['hard', 'easy', 'super easy']);
+
+Function.prototype.myApply = function (obj = {}, ...args) {
+  const argsArray = args[0];
+  if (typeof this !== 'function') {
+    throw new Error();
+  }
+  obj.fn = this;
+  obj.fn(...argsArray);
+};
+
+scores.myApply(physics, ['hard', 'easy', 'super easy']);
+
+/**
+ *  Polyfill array flat
+ *
+ */
+
+/**
+ *  Polyfill Promise
+ */
