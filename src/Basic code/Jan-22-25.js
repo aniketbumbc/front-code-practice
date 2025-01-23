@@ -178,6 +178,22 @@ Function.prototype.myApply = function (obj = {}, ...args) {
 
 scores.myApply(physics, ['hard', 'easy', 'super easy']);
 
+Function.prototype.myBind = function (obj = {}, ...args1) {
+  if (typeof this !== 'function') {
+    throw new Error();
+  }
+  obj.fn = this;
+
+  console.log('args1', ...args1);
+
+  return function (...args2) {
+    obj.fn(...args1, ...args2);
+    console.log('args2', ...args2);
+  };
+};
+
+scores.myBind(physics, ['hard', 'easy', 'super hard'])('Yahoo');
+
 /**
  *  Polyfill array flat
  *
