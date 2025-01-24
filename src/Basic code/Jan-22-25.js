@@ -193,12 +193,3 @@ Function.prototype.myBind = function (obj = {}, ...args1) {
 };
 
 scores.myBind(physics, ['hard', 'easy', 'super hard'])('Yahoo');
-
-/**
- *  Polyfill array flat
- *
- */
-
-/**
- *  Polyfill Promise
- */
