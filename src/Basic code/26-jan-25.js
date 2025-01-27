@@ -40,5 +40,5 @@ Promise.polyfillPromise = function (arry) {
 };
 
 Promise.polyfillPromise([promise1, promise2, promise3])
-  .then(console.log)
+  .then((res) => console.log(res))
   .catch(console.log);
