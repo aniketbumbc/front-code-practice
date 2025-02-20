@@ -69,4 +69,5 @@ amy.speak();
 
 /**
  *  https://www.freecodecamp.org/news/throttling-in-javascript/#heading-what-is-throttling
+ * https://www.geeksforgeeks.org/difference-between-debouncing-and-throttling/
  */
