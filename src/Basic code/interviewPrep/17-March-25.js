@@ -146,3 +146,5 @@ Object.seal(batsman);
 batsman.score = 10;
 
 console.log(batsman);
+
+console.log('Testing');
