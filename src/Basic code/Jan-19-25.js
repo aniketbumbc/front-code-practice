@@ -1,5 +1,5 @@
 /***
- *  string as input and reverses only the vowels in the string
+ *  string as input and reverses only the vowels in the string it is long code don't look
  */
 
 const reverseVowels = (str) => {
