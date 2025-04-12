@@ -67,7 +67,6 @@ const groupAnagram = (strs) => {
 const reverseNumber = (num) => {
   let reverseNumber = 0;
   let remainder = 0;
-  let tempNumber = 1;
 
   while (num > 0) {
     remainder = num % 10;
