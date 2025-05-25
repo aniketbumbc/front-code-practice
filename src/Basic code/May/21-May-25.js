@@ -34,5 +34,9 @@ function findMissNumberWithCount(arry, count) {
 findMissNumberWithCount([1, 2, 4, 5], 10);
 
 /**
- *  Method chanining
+ *  Method chaining
+ */
+
+/**
+ *
  */
