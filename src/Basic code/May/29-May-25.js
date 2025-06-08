@@ -98,7 +98,6 @@ const testObj = {
 };
 
 const newObj = deepClone(testObj);
-
 newObj.city.name = 'Dubai';
 
 console.log(newObj);
