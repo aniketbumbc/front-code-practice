@@ -84,19 +84,16 @@ const multiples = tesArray.testReduce((acc, curr) => {
   return acc;
 }, 1);
 
-// console.log(multiples);
-
+// console.log(multiples)x
 /**
  *  Deep Copy of array and object polyfill
  */
-
 const testObj = {
   name: 'bunny',
   city: {
     name: 'London',
   },
 };
-
 const newObj = deepClone(testObj);
 newObj.city.name = 'Dubai';
 
