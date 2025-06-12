@@ -137,3 +137,79 @@ const factorialNumber = (num) => {
 /**
  *   Longest sequence of unique character
  */
+
+const longSequenceChar = (str) => {
+  let longStr = '';
+  let shortStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    let indexChar = longStr.indexOf(char);
+
+    if (indexChar !== -1) {
+      if (longStr.length > shortStr.length) {
+        shortStr = longStr;
+
+        longStr = longStr.substring(indexChar + 1) + char;
+      }
+    } else {
+      longStr += str[i];
+    }
+  }
+
+  if (longStr.length > shortStr.length) {
+    shortStr = longStr;
+  }
+
+  console.log(shortStr);
+};
+
+// longSequenceChar('bbbbb');
+// longSequenceChar('pwwkew');
+// longSequenceChar('dvdf');
+
+/**
+ *  Check if a string is substring of another return index  or  -1 Search smaller string in larger string
+ */
+
+const isSubString = (longStr, shortStr) => {
+  let shortStrLength = shortStr.length;
+  let tempIncrement = 0;
+  let startIndex = -1;
+
+  for (let i = 0; i < longStr.length; i++) {
+    if (shortStr[tempIncrement] === longStr[i]) {
+      tempIncrement += 1;
+    }
+    if (tempIncrement === shortStrLength) {
+      startIndex = i - tempIncrement + 1;
+      return startIndex;
+    }
+  }
+
+  return -1;
+};
+
+// console.log(isSubString('aniket', 'ike'));
+// console.log(isSubString('aniket', 'ket'));
+// console.log(isSubString('geeksforgeeks', 'eks'));
+
+/** String matching array  */
+
+const stringMatch = (arry) => {
+  const output = [];
+
+  arry.sort((a, b) => b.length - a.length);
+
+  for (let i = 0; i < arry.length; i++) {
+    for (let j = 0; j < arry.length; j++) {
+      if (i !== j && arry[j].includes(arry[i])) {
+        output.push(arry[i]);
+      }
+    }
+  }
+
+  console.log(output);
+};
+
+stringMatch(['mass', 'as', 'hero', 'superhero']);
