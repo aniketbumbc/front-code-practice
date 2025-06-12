@@ -30,7 +30,7 @@ const path = require('path');
 //   await browser.close();
 // })();
 
-const TOKEN = '2STyRUR9lF5qUyR618c17cc3248f4aff719b37df637aecc94';
+const TOKEN = '';
 
 const headers = {
   'Cache-Control': 'no-cache',

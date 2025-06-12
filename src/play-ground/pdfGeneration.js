@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const TOKEN = '2STyRUR9lF5qUyR618c17cc3248f4aff719b37df637aecc94';
+const TOKEN = '';
 
 const url = `https://production-sfo.browserless.io/pdf?token=${TOKEN}`;
 const headers = {
