@@ -10,7 +10,6 @@ const isValidParentheses = (str) => {
   };
 
   const stack = [];
-
   for (let char of str) {
     if (tempObj.hasOwnProperty(char)) {
       stack.push(char);
@@ -53,7 +52,6 @@ const sortArrayWithOutSort = (arry) => {
 
 const bubbleSort = (arr) => {
   let isDone = false;
-
   while (!isDone) {
     isDone = true;
 
@@ -87,7 +85,6 @@ const isTwoWordAnagrams = (str1, str2) => {
   if (sortStr1 !== sortStr2) {
     return false;
   }
-
   return true;
 };
 
@@ -115,7 +112,6 @@ const binarySearch = (arr, searchEle) => {
       return mid;
     }
   }
-
   return -1;
 };
 
@@ -141,7 +137,6 @@ const factorialNumber = (num) => {
 const longSequenceChar = (str) => {
   let longStr = '';
   let shortStr = '';
-
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
     let indexChar = longStr.indexOf(char);
@@ -160,7 +155,6 @@ const longSequenceChar = (str) => {
   if (longStr.length > shortStr.length) {
     shortStr = longStr;
   }
-
   console.log(shortStr);
 };
 
@@ -186,7 +180,6 @@ const isSubString = (longStr, shortStr) => {
       return startIndex;
     }
   }
-
   return -1;
 };
 
@@ -208,7 +201,6 @@ const stringMatch = (arry) => {
       }
     }
   }
-
   console.log(output);
 };
 
