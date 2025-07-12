@@ -19,7 +19,7 @@ const findMissNumber = (arr) => {
   console.log(tempCal - totalCal);
 };
 
-findMissNumber(tempArr);
+//findMissNumber(tempArr);
 
 /**
  *  move zeros last array
@@ -41,7 +41,7 @@ function moveZero(arr) {
   console.log(arr);
 }
 
-moveZero([1, 3, 0, 5, 0, 0, 3, 0]);
+//moveZero([1, 3, 0, 5, 0, 0, 3, 0]);
 
 /*
  * Implement your solution here!
@@ -85,3 +85,89 @@ function flattenObject(obj, parentKey = '', finalObj = {}) {
 
   return finalObj;
 }
+
+/**
+ * [
+  { user: 8, duration: 50, equipment: ['bench'] },
+  { user: 7, duration: 150, equipment: ['dumbbell'] },
+  { user: 1, duration: 10, equipment: ['barbell'] },
+  { user: 7, duration: 100, equipment: ['bike', 'kettlebell'] },
+  { user: 7, duration: 200, equipment: ['bike'] },
+  { user: 2, duration: 200, equipment: ['treadmill'] },
+  { user: 2, duration: 200, equipment: ['bike'] },
+];
+ */
+
+const userData = [
+  { user: 8, duration: 50, equipment: ['bench'] },
+  { user: 7, duration: 150, equipment: ['dumbbell'] },
+  { user: 1, duration: 10, equipment: ['barbell'] },
+  { user: 7, duration: 100, equipment: ['bike', 'kettlebell'] },
+  { user: 7, duration: 200, equipment: ['bike'] },
+  { user: 2, duration: 200, equipment: ['treadmill'] },
+  { user: 2, duration: 200, equipment: ['bike'] },
+];
+
+const userData2 = [
+  { user: 8, duration: 50, equipment: ['bench'] },
+  {
+    user: 7,
+    duration: 450,
+    equipment: ['bike', 'dumbbell', 'kettlebell'],
+  },
+  { user: 1, duration: 10, equipment: ['barbell'] },
+  { user: 2, duration: 400, equipment: ['bike', 'treadmill'] },
+];
+
+const userData3 = [
+  { user: 8, duration: 50, equipment: ['bench'] },
+  { user: 7, duration: 150, equipment: ['dumbbell', 'kettlebell'] },
+  { user: 8, duration: 50, equipment: ['bench'] },
+  { user: 7, duration: 150, equipment: ['bench', 'kettlebell'] },
+];
+
+const combineData = (userArray) => {
+  const tempObj = {};
+  let copyTempObj = [];
+
+  for (const ele of userArray) {
+    tempObj[ele.user]
+      ? tempObj[ele.user].push(ele)
+      : (tempObj[ele.user] = [ele]);
+  }
+
+  for (let key in tempObj) {
+    if (tempObj[key].length > 1) {
+      const getObj = mergeCommon(tempObj[key]);
+      copyTempObj.push(getObj);
+    } else {
+      const temp = tempObj[key].pop();
+      copyTempObj.push(temp);
+    }
+  }
+  console.log(copyTempObj.sort((a, b) => b.user - a.user));
+};
+
+const mergeCommon = (arr) => {
+  const tempObj = {};
+  let duration = 0;
+  let equipment = [];
+  arr.forEach((ele) => {
+    tempObj['user'] = ele.user;
+    tempObj['duration'] = duration += ele.duration;
+    if (ele.equipment.length > 0) {
+      const equp = [...ele?.equipment];
+      equipment.push(...equp, ...equipment);
+    }
+
+    const mySetEqu = new Set(equipment);
+
+    tempObj['equipment'] = [...mySetEqu].sort();
+  });
+
+  return tempObj;
+};
+
+combineData(userData3);
+combineData(userData2);
+combineData(userData);
