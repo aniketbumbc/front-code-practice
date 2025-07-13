@@ -168,6 +168,27 @@ const mergeCommon = (arr) => {
   return tempObj;
 };
 
-combineData(userData3);
-combineData(userData2);
-combineData(userData);
+// combineData(userData3);
+// combineData(userData2);
+// combineData(userData);
+
+const arrData = [4, 12, 8, 130, 44];
+
+const testFn = (num) => num % 2 === 0;
+
+export default function findIndex(array, predicate, fromIndex = 0) {
+  let foundEle;
+  // let fromIndex;
+
+  for (let i = 0; i < array.length; i++) {
+    if (predicate(array[i])) {
+      foundEle = array[i];
+      fromIndex = array.indexOf(foundEle);
+      return fromIndex;
+    }
+  }
+
+  return -1;
+}
+
+findIndex(arrData, testFn);
