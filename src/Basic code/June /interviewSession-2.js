@@ -178,7 +178,6 @@ const testFn = (num) => num % 2 === 0;
 
 export default function findIndex(array, predicate, fromIndex = 0) {
   let foundEle;
-  // let fromIndex;
 
   for (let i = 0; i < array.length; i++) {
     if (predicate(array[i])) {
@@ -191,4 +190,35 @@ export default function findIndex(array, predicate, fromIndex = 0) {
   return -1;
 }
 
-findIndex(arrData, testFn);
+// findIndex(arrData, testFn);
+
+function mostCommonElements(numbers, k) {
+  const tempMap = new Map();
+  const tempArry = [];
+
+  for (const ele of numbers) {
+    if (tempMap.has(ele)) {
+      tempMap.set(ele, tempMap.get(ele) + 1);
+    } else {
+      tempMap.set(ele, 1);
+    }
+  }
+
+  const sortedDesc = new Map(
+    [...tempMap.entries()].sort((a, b) => b[1] - a[1])
+  );
+
+  for (const [key, value] of sortedDesc) {
+    if (tempArry.length !== k) {
+      tempArry.push(key);
+    }
+  }
+
+  console.log(tempArry);
+}
+
+const numbersEle = [3, 3, 2, 3, 5, 3, 5, 4, 4, 4];
+
+const k = 1;
+
+mostCommonElements(numbersEle, k);
