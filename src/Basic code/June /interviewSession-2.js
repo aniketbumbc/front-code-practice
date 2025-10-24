@@ -221,4 +221,74 @@ const numbersEle = [3, 3, 2, 3, 5, 3, 5, 4, 4, 4];
 
 const k = 1;
 
-mostCommonElements(numbersEle, k);
+// mostCommonElements(numbersEle, k);
+
+const rotateArray = (arr, target) => {
+  let high = arr.length - 1;
+  let low = arr[0];
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (arr[mid] === target) return arr[mid];
+
+    if (arr[low] <= arr[mid]) {
+      if (arr[low] <= target && target < arr[mid]) {
+        high = mid + 1;
+      } else {
+        low = mid - 1;
+      }
+    } else {
+      if (arr[mid] < target && target <= arr[high]) {
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
+    }
+  }
+
+  return -1;
+};
+
+function classNames(...args) {
+  const classes = [];
+
+  args.forEach((arg) => {
+    if (!arg) {
+      return;
+    }
+    const argType = typeof arg;
+
+    if (argType === 'string' || argType === 'number') {
+      classes.push(arg);
+      return;
+    }
+
+    if (Array.isArray(arg)) {
+      classes.push(classNames(...arg));
+      return;
+    }
+
+    if (argType === 'object') {
+      for (const key in arg) {
+        if (Object.hasOwn(arg, key) && arg[key]) {
+          classes.push(key);
+        }
+      }
+    }
+    return;
+  });
+
+  return classes.join(' ');
+}
+
+classNames('foo', 'bar'); // 'foo bar'
+classNames('foo', { bar: true }); // 'foo bar'
+classNames({ 'foo-bar': true }); // 'foo-bar'
+classNames({ 'foo-bar': false }); // ''
+classNames({ foo: true }, { bar: true }); // 'foo bar'
+classNames({ foo: true, bar: true }); // 'foo bar'
+classNames({ foo: true, bar: false, qux: true });
+classNames(['foo', 'bar', 'baz']);
+
+classNames({ 'foo-bar': false });
