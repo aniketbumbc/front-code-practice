@@ -122,4 +122,6 @@
 
 // import './Basic code/June /interviewSession-2';
 
-import './Code Practice/basic-practice';
+// import './Code Practice/basic-practice';
+
+import './Code Practice/basic-practice-2';
