@@ -126,4 +126,6 @@
 
 // import './Code Practice/basic-practice-2';
 
-import './Code Practice/Arrays/practice-session-1';
+// import './Code Practice/Arrays/practice-session-1';
+
+import './Code Practice/Arrays/practice-seesion-2';
