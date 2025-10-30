@@ -19,7 +19,7 @@ const mergeSorted = (arr1, arr2) => {
   console.log(tempArr.filter((ele) => ele > 0));
 };
 
-mergeSorted([1, 2, 3, 0, 0, 0], [2, 5, 6]);
+//mergeSorted([1, 2, 3, 0, 0, 0], [2, 5, 6]);
 
 const mergeSortedArr = (nums1, m, nums2, n) => {
   let p1 = 0;
@@ -36,3 +36,65 @@ const mergeSortedArr = (nums1, m, nums2, n) => {
     }
   }
 };
+
+/**
+ *  Find max consecutive one
+ */
+
+const findOne = (arr) => {
+  let j = 0;
+  let max = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      j++;
+    } else {
+      max = j;
+      j = 0;
+    }
+  }
+
+  console.log(max);
+};
+
+// findOne([1, 1, 1, 0, 1, 1]);
+
+// findOne([1, 0, 1, 1, 0, 1]);
+
+//
+
+// const result = testArr.reduce((acc, curr) => acc + curr, 0);
+
+// console.log(result);
+
+/**
+ *  Find single number
+ */
+
+const findSingleNum = (arr) => {
+  const temp = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (temp[arr[i]]) {
+      temp[arr[i]] = temp[arr[i]] + 1;
+    } else {
+      temp[arr[i]] = 1;
+    }
+  }
+
+  const key = Object.keys(temp).find((k) => temp[k] === 1);
+
+  console.log(key);
+};
+
+findSingleNum([4, 1, 2, 1, 2]);
+
+const testArr = [9, 9, 10, 0, 0];
+
+let xor = 0;
+
+for (let ele of testArr) {
+  xor = xor ^ ele;
+}
+
+console.log(xor);
