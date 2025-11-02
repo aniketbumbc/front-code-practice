@@ -67,3 +67,19 @@ const facto = (n) => {
 };
 
 console.log(facto(5));
+
+/**
+ * If n is power of 2 then return true : false
+ */
+
+const nIsPowerOfTwo = (n) => {
+  if (n === 1) {
+    return true;
+  } else if (n % 2 !== 0 || n <= 0) {
+    return false;
+  }
+
+  return nIsPowerOfTwo(Math.floor(n / 2));
+};
+
+console.log(nIsPowerOfTwo());
