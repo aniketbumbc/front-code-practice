@@ -155,11 +155,13 @@ const multiplyTwo = (a) => a * 10;
 
 // multiplyTwo execute first and then addTwo
 
-const compose = (...fns) => (value) => {
-  return fns.reduceRight((currentValue, currentFn) => {
-    return currentFn(currentValue);
-  }, value);
-};
+const compose =
+  (...fns) =>
+  (value) => {
+    return fns.reduceRight((currentValue, currentFn) => {
+      return currentFn(currentValue);
+    }, value);
+  };
 
 console.log(compose(addTwo, multiplyTwo)(2));
 /**
@@ -167,11 +169,13 @@ console.log(compose(addTwo, multiplyTwo)(2));
  *  Left to right ie (multiplyTwo, addTwo)
  */
 
-const pipe = (...fns) => (value) => {
-  return fns.reduce((acc, fn) => {
-    return fn(acc);
-  }, value);
-};
+const pipe =
+  (...fns) =>
+  (value) => {
+    return fns.reduce((acc, fn) => {
+      return fn(acc);
+    }, value);
+  };
 console.log(pipe(addTwo, multiplyTwo)(2));
 console.log(pipe(multiplyTwo, addTwo)(2));
 

@@ -20,7 +20,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 myPromise
   .then((data) => {
-    console.log(data);
+    // console.log(data);
   })
   .catch((error) => {
     console.error(error);
@@ -82,8 +82,8 @@ function introduceApply(...arrTest) {
   console.log(`Hello  ${this.name} ${arrTest}`);
 }
 
-introduce.apply(person3, [1, 2, 3, 4]);
-introduceApply.apply(person3, [1, 2, 3, 4]);
+// introduce.apply(person3, [1, 2, 3, 4]);
+// introduceApply.apply(person3, [1, 2, 3, 4]);
 
 /**
  *  3. bind() - Create a new function with fixed this
@@ -96,4 +96,72 @@ function introduceBind(age) {
 
 const callBind = introduceBind.bind(person3, 30);
 
-callBind();
+// callBind();
+
+/**
+ * 
+ *  The group of anagram 
+ * 
+ * Input: 
+
+Output: [
+  ["eat", "tea", "ate"],
+  ["tan", "nat"],
+  ["bat"]
+]
+ */
+
+const arrGroup = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat'];
+
+const groupOfAnagram = (arr) => {
+  const tempObj = {};
+
+  for (const ele of arr) {
+    const sortEle = ele.split('').sort().join('');
+    tempObj[sortEle] ? tempObj[sortEle].push(ele) : (tempObj[sortEle] = [ele]);
+  }
+  console.log(Object.values(tempObj));
+};
+
+// groupOfAnagram(arrGroup);
+
+/**
+ *  Function curring
+ *  Currying is a technique where a f
+ * function that takes multiple arguments is transformed into a sequence of functions, each taking a single argument.
+ */
+
+function add(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+
+console.log(add(10)(30)(40));
+
+function multiplyCurry(n) {
+  return function (b) {
+    if (b) return multiplyCurry(b * n);
+    else return n;
+  };
+}
+
+console.log(multiplyCurry(20)(10)());
+console.log(multiplyCurry(20)());
+
+/**
+ *  sum (1,2,...,n)(3,4,...,n)...(n)()
+ */
+
+function sumAll(a) {
+  return function (b) {
+    if (b) {
+      return sumAll(a + b);
+    }
+    return a;
+  };
+}
+
+console.log(sumAll(3)(23)(29)());
