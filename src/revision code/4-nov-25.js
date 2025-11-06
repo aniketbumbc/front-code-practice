@@ -163,5 +163,4 @@ function sumAll(a) {
     return a;
   };
 }
-
 console.log(sumAll(3)(23)(29)());
