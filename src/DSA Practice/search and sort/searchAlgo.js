@@ -12,7 +12,6 @@ const arr = [4, 9, 1, 0, 2];
 const result = linearSearch(arr, 0);
 
 // console.log(result);
-
 /**
  *  Binary Search
  */
@@ -36,4 +35,4 @@ const binarySearch = (arr, target) => {
   return -1;
 };
 
-console.log(binarySearch([-1, 0, 3, 5, 9, 12], 12));
+//console.log(binarySearch([-1, 0, 3, 5, 9, 12], 12));
