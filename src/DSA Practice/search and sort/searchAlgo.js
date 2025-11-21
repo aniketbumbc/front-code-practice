@@ -36,3 +36,30 @@ const binarySearch = (arr, target) => {
 };
 
 //console.log(binarySearch([-1, 0, 3, 5, 9, 12], 12));
+
+/**
+ *  Bubble sort algorithm
+ */
+
+const bubbleSort = (arr) => {
+  const n = arr.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    let isSwap = false;
+    //compare loop
+    for (j = 0; j < n - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        isSwap = true;
+      }
+    }
+    if (!isSwap) break;
+  }
+
+  return arr;
+};
+
+console.log(bubbleSort([5, 4, 8, 2, 9, 1]));
+console.log(bubbleSort([5, 4, 1, 8, 2, 9, 10]));
