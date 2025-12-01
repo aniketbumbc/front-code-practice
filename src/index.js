@@ -134,4 +134,6 @@
 
 // import './revision code/4-nov-25';
 
-import './DSA Practice/search and sort/searchAlgo';
+// import './DSA Practice/search and sort/searchAlgo';
+
+import './DSA Practice/Linklist/desgin-linklist';
