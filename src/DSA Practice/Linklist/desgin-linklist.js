@@ -8,7 +8,7 @@
  */
 
 function Node(val) {
-  this.value = val;
+  this.val = val;
   this.next = null;
 }
 
@@ -25,18 +25,18 @@ function myLinkList() {
  * @param { } val
  */
 
-function addAtHead(val) {
+myLinkList.prototype.addAtHead = function (val) {
   const newNode = new Node(val);
   newNode.next = this.head;
   this.head = newNode;
   this.size += 1;
-}
+};
 
 /**
  *  add at the tail
  */
 
-function addToTail(val) {
+myLinkList.prototype.addToTail = function (val) {
   let newNode = new Node(val);
 
   // check if first node is null
@@ -51,7 +51,7 @@ function addToTail(val) {
   }
 
   this.size += 1;
-}
+};
 
 /**
  *
@@ -65,13 +65,15 @@ function addToTail(val) {
  *
  */
 
-function addAtTail(value, index) {
-  const newNode = new Node(value);
+myLinkList.prototype.addAtIndex = function (val, index) {
+  const newNode = new Node(val);
+
+  if (index < 0 || index > this.size) return;
 
   if (index === 0) {
-    addAtHead(value);
+    addAtHead(val);
   } else if (index === this.size) {
-    addAtTail(value);
+    addToTail(val);
   } else {
     let currentNode = this.head;
 
@@ -83,4 +85,61 @@ function addAtTail(value, index) {
     currentNode.next = newNode;
   }
   this.size += 1;
-}
+};
+
+/**
+ *
+ * @param {*} index
+ * @returns
+ */
+
+myLinkList.prototype.getItem = function (index) {
+  if (index < 0 || index >= this.size) return;
+  let curr = this.head;
+
+  for (let i = 0; i < index; i++) {
+    curr = curr.next;
+  }
+
+  return curr.val;
+};
+
+/**
+ *
+ * delete Item
+ * 1. reach at index - 1
+ * 2. get curr and curr.next = curr.next.next
+ * 3. check index less than 0 and greater than size
+ * 4. delete at first
+ * 5. decrease size
+ *
+ *
+ */
+
+myLinkList.prototype.deleteItem = function (index) {
+  if (index < 0 || index >= this.size) return;
+
+  if (index === 0) {
+    this.head = this.head.next;
+  } else {
+    let curr = this.head;
+    for (i = 0; i < index - 1; i++) {
+      curr = curr.next;
+    }
+
+    curr.next = curr.next.next;
+  }
+  this.size -= 1;
+};
+
+const list = new myLinkList();
+list.addAtHead(10);
+list.addAtHead(20);
+list.addToTail(30);
+list.addAtIndex(25, 2);
+//list.deleteItem(1);
+
+console.log('Item at index 0:', list.getItem(0));
+console.log('Item at index 1:', list.getItem(1));
+//list.deleteItem(10);
+console.log('Full List:', JSON.stringify(list, null, 2));
