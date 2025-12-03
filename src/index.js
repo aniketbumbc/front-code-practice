@@ -136,4 +136,6 @@
 
 // import './DSA Practice/search and sort/searchAlgo';
 
-import './DSA Practice/Linklist/desgin-linklist';
+// import './DSA Practice/Linklist/desgin-linklist';
+
+import './DSA Practice/Linklist/practiceDesginLinklist';

@@ -137,6 +137,7 @@ list.addAtHead(10);
 list.addAtHead(20);
 list.addToTail(30);
 list.addAtIndex(25, 2);
+list.addAtIndex(125, 3);
 //list.deleteItem(1);
 
 console.log('Item at index 0:', list.getItem(0));
