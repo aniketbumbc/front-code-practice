@@ -138,4 +138,6 @@
 
 // import './DSA Practice/Linklist/desgin-linklist';
 
-import './DSA Practice/Linklist/practiceDesginLinklist';
+// import './DSA Practice/Linklist/practiceDesginLinklist';
+
+import './DSA Practice/Linklist/linkList-practice-1';
