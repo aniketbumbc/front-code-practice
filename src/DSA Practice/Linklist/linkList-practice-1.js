@@ -57,3 +57,49 @@ const isPalindromeArr = (arr) => {
 let head = createLinkedList([1, 2, 2]);
 
 console.log(isPalindrome(head)); // true
+
+/**
+ *  palindrome link list
+ */
+
+const newLinklistPalindrome = () => {
+  // Find Middle
+
+  let slow = head;
+  let fast = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  // slow is middle element
+
+  // Reverse from middle
+
+  let prev = null;
+  let curr = slow;
+
+  while (curr) {
+    let temp = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = temp;
+  }
+
+  // prev ele is head
+
+  // check palindrome or not
+
+  let firstList = head;
+  let secondList = prev;
+
+  while (secondList) {
+    if (firstList.val !== secondList.val) {
+      return false;
+    }
+    firstList = firstList.next;
+    secondList = secondList.next;
+  }
+
+  return true;
+};
