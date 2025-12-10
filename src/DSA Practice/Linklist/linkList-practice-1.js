@@ -103,3 +103,49 @@ const newLinklistPalindrome = () => {
 
   return true;
 };
+
+/**
+ *  Intersection of linklist
+ *
+ */
+
+const isListIntersection = (headA, headB) => {
+  let currA = headA;
+  let currB = headB;
+  let store = new Set();
+
+  while (currB) {
+    store.add(currB);
+    currB = currB.next;
+  }
+
+  while (currA) {
+    if (store.has(currA)) {
+      return currA;
+    }
+
+    currA = currA.next;
+  }
+
+  return null;
+};
+
+/**
+ * remove-linked-list-elements
+ */
+
+var removeElements = function (head, val) {
+  const sentinelNode = new ListNode();
+  sentinelNode.next = head;
+
+  let prev = sentinelNode;
+
+  while (prev && prev.next) {
+    if (prev.next.val === val) {
+      prev.next = prev.next.next;
+    } else {
+      prev = prev.next;
+    }
+  }
+  return sentinelNode.next;
+};
