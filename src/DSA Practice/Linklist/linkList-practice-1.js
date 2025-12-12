@@ -149,3 +149,33 @@ var removeElements = function (head, val) {
   }
   return sentinelNode.next;
 };
+
+/**
+ *  Remove N Node from the end
+ */
+
+const removednNodeEnd = (head, n) => {
+  const sentinelNode = new ListNode();
+  sentinelNode.next = head;
+
+  let firstPointer = sentinelNode;
+  let secondPointer = sentinelNode;
+
+  let j = 0;
+
+  while (j < n) {
+    secondPointer = secondPointer.next;
+    j++;
+  }
+
+  while (secondPointer && secondPointer.next) {
+    firstPointer = firstPointer.next;
+    secondPointer = secondPointer.next;
+  }
+
+  let prevNode = firstPointer;
+
+  prevNode.next = prevNode.next.next;
+
+  return sentinelNode.next;
+};
