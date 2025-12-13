@@ -179,3 +179,15 @@ const removednNodeEnd = (head, n) => {
 
   return sentinelNode.next;
 };
+
+var removeDuplicates = function (arr) {
+  let j = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[j]) {
+      j = j + 1;
+      arr[j] = arr[i];
+    }
+  }
+  return j + 1;
+};
