@@ -192,6 +192,12 @@ var removeDuplicates = function (arr) {
   return j + 1;
 };
 
+/**
+ * Check if it is event odd
+ * @param { } head
+ * @returns
+ */
+
 var oddEvenList = function (head) {
   if (!head || !head.next) return head;
 
