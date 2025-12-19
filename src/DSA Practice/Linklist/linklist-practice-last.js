@@ -26,3 +26,50 @@ var addTwoNumbers = function (l1, l2) {
 
   return ansHead.next;
 };
+
+/**
+ *  rotate list by K
+ */
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
+var rotateRight = function (head, k) {
+  if (!head || !head.next) return head;
+
+  let length = 0;
+  let curr = head;
+  let slowP = head;
+  let fastP = head;
+
+  while (curr) {
+    curr = curr.next;
+    length++;
+  }
+
+  let modP = k % length;
+
+  for (let i = 0; i < modP; i++) {
+    fastP = fastP.next;
+  }
+
+  while (fastP.next) {
+    slowP = slowP.next;
+    fastP = fastP.next;
+  }
+
+  fastP.next = head;
+  let newHead = slowP.next;
+  slowP.next = null;
+
+  return newHead;
+};
