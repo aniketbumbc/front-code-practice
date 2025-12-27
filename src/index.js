@@ -140,4 +140,6 @@
 
 // import './DSA Practice/Linklist/practiceDesginLinklist';
 
-import './DSA Practice/Linklist/linkList-practice-1';
+// import './DSA Practice/Linklist/linkList-practice-1';
+
+import './DSA Practice/string-easy-medium/basic-pratice';
