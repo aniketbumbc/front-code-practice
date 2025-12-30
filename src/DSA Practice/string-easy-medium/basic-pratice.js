@@ -19,7 +19,6 @@ const findLengthLastWord = (sentence) => {
   console.log(count);
 };
 
-// findLengthLastWord('hello i am aniket ');
 findLengthLastWord('   fly me   to   the moon  ');
 findLengthLastWord('Hello World');
 findLengthLastWord('luffy is still joyboy');
