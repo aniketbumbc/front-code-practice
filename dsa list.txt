@@ -3,3 +3,6 @@
 3. https://leetcode.com/problems/reverse-linked-list/
 4. https://leetcode.com/problems/linked-list-cycle/
 5. https://leetcode.com/problems/palindrome-linked-list
+6. https://leetcode.com/problems/intersection-of-two-linked-lists/
+7. https://leetcode.com/problems/remove-linked-list-elements/
+8. https://leetcode.com/problems/remove-nth-node-from-end-of-list/
