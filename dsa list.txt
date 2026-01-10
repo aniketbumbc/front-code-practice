@@ -6,3 +6,6 @@
 6. https://leetcode.com/problems/intersection-of-two-linked-lists/
 7. https://leetcode.com/problems/remove-linked-list-elements/
 8. https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+9.https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/1880464575/
+10.https://leetcode.com/problems/odd-even-linked-list/submissions/1880479972/
+11.https://leetcode.com/problems/merge-two-sorted-lists/submissions/1880501457/
