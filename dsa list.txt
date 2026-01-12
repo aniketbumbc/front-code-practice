@@ -9,3 +9,5 @@
 9.https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/1880464575/
 10.https://leetcode.com/problems/odd-even-linked-list/submissions/1880479972/
 11.https://leetcode.com/problems/merge-two-sorted-lists/submissions/1880501457/
+12.https://leetcode.com/problems/add-two-numbers/submissions/
+13. https://leetcode.com/problems/rotate-list/submissions/1882480923/
