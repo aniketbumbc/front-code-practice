@@ -12,3 +12,5 @@
 12.https://leetcode.com/problems/add-two-numbers/submissions/
 13. https://leetcode.com/problems/rotate-list/submissions/1882480923/
 14. https://leetcode.com/problems/swap-nodes-in-pairs/submissions/1883378382/
+15. https://leetcode.com/problems/length-of-last-word/
+16. https://leetcode.com/problems/find-words-containing-character
