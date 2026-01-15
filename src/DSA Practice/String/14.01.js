@@ -41,4 +41,95 @@ const findWordChar = (words, x) => {
   console.log(result);
 };
 
-findWordChar(['leet', 'code'], 'e');
+// findWordChar(['leet', 'code'], 'e');
+
+const countJewels = (jewels, stones) => {
+  const tempObj = {};
+  let count = 0;
+
+  for (let ele of stones) {
+    tempObj[ele] ? (tempObj[ele] += 1) : (tempObj[ele] = 1);
+  }
+
+  for (const ele of jewels) {
+    if (tempObj[ele]) {
+      count += tempObj[ele];
+    }
+  }
+
+  console.log(count);
+};
+
+const countJewelsSet = (jewels, stones) => {
+  const tempObj = new Set();
+  let count = 0;
+
+  for (let ele of jewels) {
+    tempObj.add(ele);
+  }
+
+  console.log(tempObj);
+
+  for (const ele of stones) {
+    if (tempObj.has(ele)) {
+      count += 1;
+    }
+  }
+
+  console.log(count);
+};
+
+// countJewelsSet('aA', 'aAAbbbb');
+
+const mostVowelsAndConsonent = (word) => {
+  const tempObj = {};
+
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
+  let maxVowel = 0;
+  let maxConsnent = 0;
+
+  for (const ele of word) {
+    tempObj[ele] = (tempObj[ele] || 0) + 1;
+
+    if (vowels.has(ele)) {
+      maxVowel = Math.max(maxVowel, tempObj[ele]);
+    } else {
+      maxConsnent = Math.max(maxConsnent, tempObj[ele]);
+    }
+  }
+
+  const mostVowels = maxVowel + maxConsnent;
+
+  return mostVowels;
+};
+
+/**
+ *
+ *
+ *  tempObj = {
+ * q:1,
+ * b:10,
+ * i:20
+ * }
+ * @param { } obj
+ */
+
+// const calculateVowelsMax = (obj) => {
+//   for (const key in obj) {
+//     if (vowels.has(key)) {
+//       if (obj[key] > maxVowel) {
+//         maxVowel = obj[key];
+//       }
+//     } else {
+//       if (obj[key] > maxConsnent) {
+//         maxConsnent = obj[key];
+//       }
+//     }
+//   }
+
+//   console.log('maxVowel', maxVowel);
+//   console.log('maxConsnent', maxConsnent);
+// };
+
+mostVowelsAndConsonent('successes');
+mostVowelsAndConsonent('aeiaeia');
