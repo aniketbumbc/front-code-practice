@@ -133,3 +133,25 @@ const mostVowelsAndConsonent = (word) => {
 
 mostVowelsAndConsonent('successes');
 mostVowelsAndConsonent('aeiaeia');
+
+var balancedStringSplit = function (s) {
+  let R = 0;
+  let L = 0;
+  let count = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === 'R') {
+      R += 1;
+    } else {
+      L += 1;
+    }
+
+    if (R === L) {
+      count += 1;
+      R = 0;
+      L = 0;
+    }
+  }
+
+  return count;
+};
