@@ -155,3 +155,24 @@ var balancedStringSplit = function (s) {
 
   return count;
 };
+
+/**
+ *  Reverse String by (n/2)
+ */
+
+const reverseStr = (str) => {
+  let reverseStr = str.split('');
+
+  console.log(reverseStr);
+  let n = str.length;
+
+  for (let i = 0; i < Math.floor(n / 2); i++) {
+    let temp = reverseStr[i];
+    reverseStr[i] = reverseStr[n - i - 1];
+    reverseStr[n - i - 1] = temp;
+  }
+
+  return reverseStr.join('');
+};
+
+console.log(reverseStr('aniket'));
