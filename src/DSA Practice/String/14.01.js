@@ -176,3 +176,18 @@ const reverseStr = (str) => {
 };
 
 console.log(reverseStr('aniket'));
+
+var reverseStr = function (s, k) {
+  let tempStr = s.split('');
+
+  for (let x = 0; x < tempStr.length; x = x + 2 * k) {
+    let n = k;
+    let mid = Math.floor(n / 2);
+    for (let i = 0; i < mid; i++) {
+      let temp = tempStr[x + i];
+      tempStr[x + i] = tempStr[x + n - i - 1];
+      tempStr[x + n - i - 1] = temp;
+    }
+  }
+  return tempStr.join('');
+};
