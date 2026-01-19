@@ -177,7 +177,7 @@ const reverseStr = (str) => {
 
 console.log(reverseStr('aniket'));
 
-var reverseStr = function (s, k) {
+var reverseStrII = function (s, k) {
   let tempStr = s.split('');
 
   for (let x = 0; x < tempStr.length; x = x + 2 * k) {
@@ -190,4 +190,60 @@ var reverseStr = function (s, k) {
     }
   }
   return tempStr.join('');
+};
+
+/**
+ *  Valid Palindrome ignore non-aplha numeric character
+ */
+
+const isValidPalindrome = (str) => {
+  let lowerCase = str.toLowerCase();
+  let filterStr = '';
+
+  console.log(lowerCase);
+
+  for (let i = 0; i < lowerCase.length; i++) {
+    if (lowerCase[i].match(/[a-z0-9]/i)) {
+      filterStr += lowerCase[i];
+    }
+  }
+
+  let reverseStr = filterStr.split('');
+  let n = reverseStr.length;
+  let mid = Math.floor(n / 2);
+
+  for (let i = 0; i < mid; i++) {
+    let temp = reverseStr[i];
+    reverseStr[i] = reverseStr[n - i - 1];
+    reverseStr[n - i - 1] = temp;
+  }
+
+  console.log('output', filterStr);
+  console.log('ogStr', reverseStr.join(''));
+  console.log(filterStr === reverseStr.join(''));
+
+  return filterStr === reverseStr.join('');
+};
+
+isValidPalindrome('race a car');
+
+const isValidPalindromeTwoPointer = (str) => {
+  s = s.toLowerCase();
+  let i = 0;
+  let j = str.length - 1;
+
+  while (i < j) {
+    if (!str[i].match(/[a-z0-9]/i)) {
+      i++;
+    } else if (!str[j].match(/[a-z0-9]/i)) {
+      j++;
+    } else if (str[i] === str[j]) {
+      i++;
+      j++;
+    } else {
+      false;
+    }
+  }
+
+  return true;
 };
