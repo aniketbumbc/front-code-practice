@@ -228,7 +228,7 @@ const isValidPalindrome = (str) => {
 isValidPalindrome('race a car');
 
 const isValidPalindromeTwoPointer = (str) => {
-  s = s.toLowerCase();
+  str = str.toLowerCase();
   let i = 0;
   let j = str.length - 1;
 
@@ -236,14 +236,33 @@ const isValidPalindromeTwoPointer = (str) => {
     if (!str[i].match(/[a-z0-9]/i)) {
       i++;
     } else if (!str[j].match(/[a-z0-9]/i)) {
-      j++;
+      j--;
     } else if (str[i] === str[j]) {
       i++;
-      j++;
+      j--;
     } else {
-      false;
+      return false;
     }
   }
 
   return true;
 };
+
+/**
+ *  Largest odd number in string
+ */
+
+const largeOddNumber = (str) => {
+  for (let i = str.length - 1; i >= 0; i--) {
+    if (Number(str[i]) % 2 != 0) {
+      return str;
+    } else {
+      str = str.substring(0, i);
+    }
+  }
+
+  return str;
+};
+
+console.log(largeOddNumber('32241'));
+console.log(largeOddNumber('224012'));
