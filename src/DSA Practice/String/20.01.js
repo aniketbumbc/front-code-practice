@@ -20,3 +20,33 @@ const longestCommon = (strs) => {
 };
 
 console.log(longestCommon(['dog', 'racecar', 'car']));
+
+const isAnagram = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  const tempStr1 = calculateFrequency(str1);
+  const tempStr2 = calculateFrequency(str2);
+
+  for (key in tempStr1) {
+    if (tempStr1[key] !== tempStr2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const calculateFrequency = (str) => {
+  let tempObj = {};
+
+  for (ele of str) {
+    tempObj[ele] ? (tempObj[ele] += 1) : (tempObj[ele] = 1);
+  }
+
+  return tempObj;
+};
+
+console.log(isAnagram('anagram', 'nagaram'));
+console.log(isAnagram('rat', 'cat'));
