@@ -15,7 +15,7 @@
 15.https://leetcode.com/problems/length-of-last-word/
 16.https://leetcode.com/problems/find-words-containing-character
 17.https://leetcode.com/problems/jewels-and-stones
-18.ttps://leetcode.com/problems/find-most-frequent-vowel-and-consonant
+18.https://leetcode.com/problems/find-most-frequent-vowel-and-consonant
 19 https://leetcode.com/problems/split-a-string-in-balanced-strings/
 20.https://leetcode.com/problems/reverse-string-ii/
 21.https://leetcode.com/problems/valid-palindrome
@@ -23,3 +23,4 @@
 23.https://leetcode.com/problems/longest-common-prefix
 24.https://leetcode.com/problems/valid-anagram
 25.https://leetcode.com/problems/isomorphic-strings
+26.https://leetcode.com/problems/group-anagrams/
