@@ -73,3 +73,20 @@ const isIsomorphic = (s, t) => {
 isIsomorphic('egg', 'add');
 isIsomorphic('foo', 'bar');
 isIsomorphic('paper', 'title');
+
+const groupAnagram = (arr) => {
+  const tempObj = {};
+
+  for (const ele of arr) {
+    const resEle = ele.split('').sort().join('');
+    if (tempObj[resEle]) {
+      tempObj[resEle].push(ele);
+    } else {
+      tempObj[resEle] = [ele];
+    }
+  }
+
+  console.log(Object.values(tempObj));
+};
+
+groupAnagram(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
