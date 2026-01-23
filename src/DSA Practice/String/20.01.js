@@ -70,9 +70,9 @@ const isIsomorphic = (s, t) => {
   return true;
 };
 
-isIsomorphic('egg', 'add');
-isIsomorphic('foo', 'bar');
-isIsomorphic('paper', 'title');
+// isIsomorphic('egg', 'add');
+// isIsomorphic('foo', 'bar');
+// isIsomorphic('paper', 'title');
 
 const groupAnagram = (arr) => {
   const tempObj = {};
@@ -89,4 +89,30 @@ const groupAnagram = (arr) => {
   console.log(Object.values(tempObj));
 };
 
-groupAnagram(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
+const groupAnagramTest = (arr) => {
+  let obj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let s = arr[i];
+    let freqArr = Array(26).fill(0);
+    for (let j = 0; j < s.length; j++) {
+      let index = s[j].charCodeAt() - 'a'.charCodeAt();
+      freqArr[index]++;
+    }
+    let key = '';
+
+    for (let m = 0; m < freqArr.length; m++) {
+      key += String.fromCharCode(m + 'a'.charCodeAt(0)) + freqArr[m];
+    }
+
+    if (!obj[key]) {
+      obj[key] = [s];
+    } else {
+      obj[key].push(s);
+    }
+  }
+
+  console.log(Object.values(obj));
+};
+
+groupAnagramTest(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
