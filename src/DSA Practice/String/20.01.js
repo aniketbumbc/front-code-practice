@@ -114,5 +114,4 @@ const groupAnagramTest = (arr) => {
 
   console.log(Object.values(obj));
 };
-
 groupAnagramTest(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
