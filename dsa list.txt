@@ -29,3 +29,4 @@
 29.https://leetcode.com/problems/implement-queue-using-stacks/
 30.https://leetcode.com/problems/min-stack/
 31.https://leetcode.com/problems/remove-outermost-parentheses/
+32.https://leetcode.com/problems/evaluate-reverse-polish-notation/

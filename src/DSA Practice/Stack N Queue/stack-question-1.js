@@ -46,7 +46,7 @@ MinStack.prototype.getMin = function () {
  */
 
 /**
- *  1. Remove Outermost Parentheses
+ *  1. Remove Outermost Parentheses using stack
  */
 
 const removeOuterParentheses = (s) => {
@@ -64,6 +64,30 @@ const removeOuterParentheses = (s) => {
         ans += s[i];
       }
       stack.pop();
+    }
+  }
+  return ans;
+};
+
+/**
+ * Not using stack
+ */
+
+var removeOuterParentheses = function (s) {
+  let level = 0;
+  let ans = '';
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === '(') {
+      level++;
+      if (level > 1) {
+        ans += s[i];
+      }
+    } else {
+      if (level > 1) {
+        ans += s[i];
+      }
+      level--;
     }
   }
   return ans;
