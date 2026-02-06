@@ -36,3 +36,48 @@ console.log(
     '+',
   ]),
 );
+
+var nextGreaterElement = function (nums1, nums2) {
+  const stack = [];
+  const n = nums2.length;
+  const tempMap = {};
+
+  /**
+   *  nums2 = [1,5,0,4]
+   *
+   * tempMap =  {
+   * 4:-1,
+   * 0:4,
+   * 5:-1,
+   * 1:5
+   *   }
+   *
+   */
+
+  stack.push(nums2[n - 1]); // put last element to stack
+  tempMap[nums2[n - 1]] = -1; // put last element -1
+
+  for (let i = n - 2; i >= 0; i--) {
+    let top = stack[stack.length - 1];
+
+    if (nums2[i] < top) {
+      tempMap[nums2[i]] = top;
+    } else {
+      while (stack.length) {
+        let top = stack[stack.length - 1];
+        if (nums2[i] > top) {
+          stack.pop();
+        } else {
+          tempMap[nums2[i]] = top;
+          break;
+        }
+      }
+      if (stack.length === 0) {
+        tempMap[nums2[i]] = -1;
+      }
+    }
+    stack.push(nums2[i]);
+  }
+
+  return nums1.map((x) => tempMap[x]);
+};
