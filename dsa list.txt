@@ -30,3 +30,5 @@
 30.https://leetcode.com/problems/min-stack/
 31.https://leetcode.com/problems/remove-outermost-parentheses/
 32.https://leetcode.com/problems/evaluate-reverse-polish-notation/
+33.https://leetcode.com/problems/next-greater-element-i/
+34.https://namastedev.com/learn/namaste-dsa/daily-temperatures

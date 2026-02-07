@@ -150,4 +150,6 @@
 
 // import './DSA Practice/Stack N Queue/stack-intro';
 
-import './DSA Practice/Stack N Queue/stack-question-2';
+// import './DSA Practice/Stack N Queue/stack-question-2';
+
+import './DSA Practice/Stack N Queue/stack-question-3';
