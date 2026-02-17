@@ -33,8 +33,9 @@
 33.https://leetcode.com/problems/next-greater-element-i/
 34.https://namastedev.com/learn/namaste-dsa/daily-temperatures
 35.https://leetcode.com/problems/rotting-oranges/
-36.https://leetcode.com/problems/sqrtx
-37.https://leetcode.com/problems/guess-number-higher-or-lower/
-38.https://leetcode.com/problems/first-bad-version
-39.https://leetcode.com/problems/find-peak-element/
-40.https://leetcode.com/problems/search-in-rotated-sorted-array/
+36.https://leetcode.com/problems/sqrtx **
+37.https://leetcode.com/problems/guess-number-higher-or-lower/ **
+38.https://leetcode.com/problems/first-bad-version **
+39.https://leetcode.com/problems/find-peak-element/ **
+40.https://leetcode.com/problems/search-in-rotated-sorted-array/ **
+41.https://leetcode.com/problems/find-minimum-in-rotated-sorted-array
