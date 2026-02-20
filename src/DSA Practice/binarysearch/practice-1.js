@@ -127,3 +127,35 @@ var peakIndexInMountainArray = function (arr) {
 
   return l;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNonDuplicate = function (arr) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    let mid = left + Math.floor((right - left) / 2);
+
+    if (arr[mid] === arr[mid - 1]) {
+      let leftCount = mid - 1 - left;
+      if (leftCount % 2 == 1) {
+        right = mid - 2;
+      } else {
+        left = mid + 1;
+      }
+    } else if (arr[mid] === arr[mid + 1]) {
+      let leftCount = mid - left;
+
+      if (leftCount % 2 == 1) {
+        right = mid - 1;
+      } else {
+        left = mid + 2;
+      }
+    } else {
+      return arr[mid];
+    }
+  }
+};
