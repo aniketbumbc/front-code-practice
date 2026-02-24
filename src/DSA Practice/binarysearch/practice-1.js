@@ -129,7 +129,7 @@ var peakIndexInMountainArray = function (arr) {
 };
 
 /**
- * @param {number[]} nums
+ * @param {number[]} arr
  * @return {number}
  */
 var singleNonDuplicate = function (arr) {
