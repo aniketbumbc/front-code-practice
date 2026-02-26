@@ -33,6 +33,8 @@
 33.https://leetcode.com/problems/next-greater-element-i/
 34.https://namastedev.com/learn/namaste-dsa/daily-temperatures
 35.https://leetcode.com/problems/rotting-oranges/
+
+
 36.https://leetcode.com/problems/sqrtx **
 37.https://leetcode.com/problems/guess-number-higher-or-lower/ **
 38.https://leetcode.com/problems/first-bad-version **
@@ -43,3 +45,5 @@
 43.https://leetcode.com/problems/peak-index-in-a-mountain-array ***
 44. https://leetcode.com/problems/single-element-in-a-sorted-array/submissions ***
 45.https://leetcode.com/problems/find-k-closest-elements/
+
+46. https://leetcode.com/problems/two-sum
