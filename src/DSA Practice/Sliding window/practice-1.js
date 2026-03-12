@@ -59,3 +59,44 @@ var isSubsequence = function (s, t) {
 
   return i == s.length;
 };
+
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function (big, small) {
+  let n = big.length;
+  let m = small.length;
+
+  for (let i = 0; i <= n - m; i++) {
+    let j = 0;
+
+    for (j = 0; j < m; j++) {
+      if (big[i + j] !== small[j]) {
+        break;
+      }
+    }
+
+    if (j === m) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+
+//https://leetcode.com/problems/intersection-of-two-linked-lists/
+// two pointer
+
+var getIntersectionNode = function (headA, headB) {
+  let Pa = headA;
+  let Pb = headB;
+
+  while (Pa != Pb) {
+    Pa = Pa == null ? headB : Pa.next;
+    Pb = Pb == null ? headA : Pb.next;
+  }
+
+  return Pa;
+};
