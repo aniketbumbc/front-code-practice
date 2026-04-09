@@ -50,6 +50,11 @@ var postorderTraversal = function (root) {
   return ans;
 };
 
+/**
+ * using while loop postorder
+ * @param { } root
+ * @returns
+ */
 var postorderTraversal = function (root) {
   if (!root) return [];
   const s1 = [root];
@@ -70,14 +75,8 @@ var postorderTraversal = function (root) {
 };
 
 /**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
+ *
+ * using while loop preorder
  * @param {TreeNode} root
  * @return {number[]}
  */
@@ -93,6 +92,31 @@ var preorderTraversal = function (root) {
     ans.push(curr.val); // root
     curr.right && stack.push(curr.right); // to save right for reference
     curr.left && stack.push(curr.left); // this what algo say r
+  }
+  return ans;
+};
+
+/**
+ *  using while loop inorder
+ *
+ * left -- root -- right
+ * @param {*} root
+ * @returns
+ */
+var inorderTraversal = function (root) {
+  const ans = [];
+  const stack = [];
+  let curr = root;
+
+  while (curr || stack.length) {
+    while (curr) {
+      stack.push(curr);
+      curr = curr.left;
+    }
+
+    curr = stack.pop();
+    ans.push(curr.val);
+    curr = curr.right && curr.right;
   }
   return ans;
 };
