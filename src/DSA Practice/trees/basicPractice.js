@@ -34,6 +34,8 @@ var preorderTraversal = function (root) {
  * }
  */
 /**
+ *
+ * left -- right -- root
  * @param {TreeNode} root
  * @return {number[]}
  */
