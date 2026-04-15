@@ -65,3 +65,4 @@ Tree
 BFS and DFS
 57.https://leetcode.com/problems/binary-tree-level-order-traversal/
 58.https://leetcode.com/problems/maximum-depth-of-binary-tree/
+59.https://leetcode.com/problems/path-sum
