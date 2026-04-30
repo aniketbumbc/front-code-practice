@@ -66,3 +66,12 @@ BFS and DFS
 57.https://leetcode.com/problems/binary-tree-level-order-traversal/
 58.https://leetcode.com/problems/maximum-depth-of-binary-tree/
 59.https://leetcode.com/problems/path-sum
+60.https://leetcode.com/problems/symmetric-tree/description/
+61.https://leetcode.com/problems/invert-binary-tree/description/
+62.https://leetcode.com/problems/balanced-binary-tree/
+63.https://leetcode.com/problems/diameter-of-binary-tree/description/
+64.https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+
+65.https://leetcode.com/problems/validate-binary-search-tree/
+66.https://leetcode.com/problems/search-in-a-binary-search-tree/
+67.https://leetcode.com/problems/insert-into-a-binary-search-tree/
