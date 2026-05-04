@@ -40,6 +40,7 @@ var isValidBST = function (root) {
  *     this.right = (right===undefined ? null : right)
  * }
  */
+
 /**
  * @param {TreeNode} root
  * @param {number} val
@@ -63,6 +64,7 @@ var searchBST = function (root, val) {
   travel(root);
   return ans;
 };
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -71,6 +73,7 @@ var searchBST = function (root, val) {
  *     this.right = (right===undefined ? null : right)
  * }
  */
+
 /**
  * @param {TreeNode} root
  * @param {number} val
@@ -84,6 +87,5 @@ var insertIntoBST = function (root, val) {
   } else {
     root.left = insertIntoBST(root.left, val);
   }
-
   return root;
 };
