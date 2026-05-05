@@ -140,3 +140,35 @@ var maxPathSum = function (root) {
   travel(root);
   return maxPathAns;
 };
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} k
+ * @return {number}
+ */
+var kthSmallest = function (root, k) {
+  let ans = null;
+  let count = k;
+
+  const travel = (curr) => {
+    if (ans !== null) return;
+
+    curr.left && travel(curr.left);
+    count--;
+    if (count === 0) {
+      ans = curr.val;
+    }
+
+    curr.right && travel(curr.right);
+  };
+  travel(root);
+  return ans;
+};

@@ -75,3 +75,4 @@ BFS and DFS
 65.https://leetcode.com/problems/validate-binary-search-tree/
 66.https://leetcode.com/problems/search-in-a-binary-search-tree/
 67.https://leetcode.com/problems/insert-into-a-binary-search-tree/
+68.https://leetcode.com/problems/kth-smallest-element-in-a-bst/submissions/1995364000/
