@@ -76,3 +76,4 @@ BFS and DFS
 66.https://leetcode.com/problems/search-in-a-binary-search-tree/
 67.https://leetcode.com/problems/insert-into-a-binary-search-tree/
 68.https://leetcode.com/problems/kth-smallest-element-in-a-bst
+69.Heap Insert
