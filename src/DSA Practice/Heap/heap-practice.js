@@ -148,4 +148,25 @@ console.log('ansL--- ', heapSort(arrData));
  * Loop runs n - 1 times → O(n)
 Each heapifyDown on a heap of size i → O(log n)
 Total: O(n log n) ✅
+
+kth-largest-element-in-an-array
  */
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findKthLargest = function (nums, k) {
+  const pq = new MinPriorityQueue();
+
+  for (let i = 0; i < nums.length; i++) {
+    pq.enqueue(nums[i]);
+
+    if (pq.size() > k) {
+      pq.dequeue();
+    }
+  }
+
+  return pq.front();
+};
