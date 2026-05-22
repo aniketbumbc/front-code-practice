@@ -79,3 +79,4 @@ BFS and DFS
 69.Heap Insert, Delete
 70. Heap Sort
 71. https://leetcode.com/problems/kth-largest-element-in-an-array/
+72.https://leetcode.com/problems/kth-largest-element-in-a-stream/
