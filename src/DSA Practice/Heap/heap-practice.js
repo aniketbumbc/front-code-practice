@@ -203,3 +203,26 @@ KthLargest.prototype.add = function (val) {
  * var obj = new KthLargest(k, nums)
  * var param_1 = obj.add(val)
  */
+
+/**
+ * @param {number[]} stones
+ * @return {number}
+ */
+var lastStoneWeight = function (stones) {
+  const pq = new MaxPriorityQueue();
+
+  for (const ele of stones) {
+    pq.enqueue(ele);
+  }
+
+  while (pq.size() > 1) {
+    let y = pq.dequeue();
+    let x = pq.dequeue();
+
+    if (y - x > 0) {
+      pq.enqueue(y - x);
+    }
+  }
+
+  return pq.dequeue() || 0;
+};
