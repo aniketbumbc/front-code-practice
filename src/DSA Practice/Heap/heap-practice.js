@@ -226,3 +226,25 @@ var lastStoneWeight = function (stones) {
 
   return pq.dequeue() || 0;
 };
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function (nums, k) {
+  const tempObj = {};
+
+  for (const ele of nums) {
+    tempObj[ele] ? (tempObj[ele] += 1) : (tempObj[ele] = 1);
+  }
+  let pq = new MinPriorityQueue((x) => x.freq);
+  for (key in tempObj) {
+    pq.push({ val: key, freq: tempObj[key] });
+    if (pq.size() > k) {
+      pq.pop();
+    }
+  }
+
+  return pq.toArray().map((ele) => Number(ele.val));
+};
