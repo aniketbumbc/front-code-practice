@@ -43,3 +43,28 @@ var combine = function (n, k) {
   backtrack([], 1);
   return result;
 };
+
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function (nums) {
+  let result = [];
+
+  const backtrack = (path) => {
+    if (path.length == nums.length) {
+      result.push([...path]);
+      return;
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+      if (!path.includes(nums[i])) {
+        path.push(nums[i]);
+        backtrack(path);
+        path.pop();
+      }
+    }
+  };
+  backtrack([]);
+  return result;
+};
